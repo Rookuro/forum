@@ -1,0 +1,644 @@
+/* Font */
+
+@font-face {
+    font-family: 'Caesar';
+    src: url('../../Police/Caesar/CAESAR.TTF');
+}
+
+@font-face {
+    font-family: 'Golden Arrow';
+    src: url('../../Police/golden_arrow/Golden_Arrow.ttf');
+}
+
+@font-face {
+    font-family: 'GreekHouseSymbolized';
+    src: url('../../Police/greekhousesymbolized/GreekHouse\ Symbolized_Free.ttf');
+}
+
+/* Global */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    font-family: 'Caesar',sans-serif;
+}
+
+body {
+    background-image: url(pictures/wp2763366-mythology-wallpapers.jpg);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navbar */
+
+header{
+    width: 100%;
+    background-color: #061531;
+    padding: 10px;
+    position: sticky;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    align-items: center;
+}
+
+.block-right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 35px;
+}
+
+/* Burger */
+
+.burger{
+    display: none;
+    width: 42px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: background-color  0.5s ease-in-out;
+}
+
+.burger span::before,.burger span::after{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+
+.burger span::before{
+    transform: translateY(-10px);
+}
+
+.burger span::after{
+    transform: translateY(10px);
+}
+
+.burger.active span {
+    background-color: transparent;
+
+}
+
+.burger.active span::before{
+    transform: translateY(0px) rotateZ(45deg);
+}
+
+.burger.active span::after{
+    transform: translateY(0px) rotateZ(-45deg);
+}
+
+/* logo */
+
+.logo{
+    width: 20%;
+    
+}
+
+.logo a{
+    width: 100%;
+}
+
+.logo a img{
+    width: 100%;
+}
+
+
+/* categories */
+
+.categories{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul.listing-categories{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+ul.listing-categories li a {
+    margin: 0 10px;
+    display: flex;
+
+}
+
+/* searchbar */
+
+form{
+
+}
+
+form input{
+    border: none;
+}
+
+form button{
+
+}
+
+.searchbar{
+    width: 40%;
+    display: inline-flex;
+}
+
+.searchbar input{
+    width: 85%;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: black;
+    padding-left: 10px;
+}
+
+.searchbar input::placeholder{
+}
+
+.searchbar button{
+    width: 15%;
+    height: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.searchbar button i{
+    color: black;
+}
+
+
+/* lang */
+
+.lang{
+    width: 50px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lang img{
+    width: 100%;
+    border-radius: 50px;
+}
+
+/* Account */
+
+.account{
+    width: calc(100%/6);
+    
+}
+
+.account a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account a img{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.account a h3{
+
+}
+
+/* Settings */
+
+.settings{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.settings a{
+    width: 100%;
+}
+
+.settings a img{
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5px;
+}
+
+.bar-responsive{
+    display: none;
+}
+
+
+.back-bar-responsive{
+    display: none;
+}
+
+/* Responsive */
+
+
+@media screen and (max-width:1335px) {
+    .block-left, .block-right{
+        display: none;
+    }
+    .bar-responsive{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .bar-responsive .burger{
+        display: block;
+    }
+    .open .header-navbar {
+        transform: translateX(0);
+    }
+    .bar-responsive .logo{
+        width: 100px;
+    }
+    .bar-responsive .logo a img{
+        width: 100%;
+    }
+
+    .bar-responsive .account{
+        width: 40px;
+    }
+
+    .bar-responsive .account a img{
+        width: 100%;
+        margin: 0;
+    }
+
+
+    .back-bar-responsive{
+        align-items: center;
+        position: fixed;
+        flex-direction: column;
+        background-color: #061531;
+        width: 100%;
+        left: -100%;
+        min-height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 1s;
+        z-index: 20;
+    }
+
+    .open .back-bar-responsive{
+        display: flex;
+        transition: transform 1s;
+        transform: translateX(100%);
+    }
+
+    .search{
+        width: 70%;
+        margin-top: 30px;
+    }
+
+    .search .searchbar{
+        width: 100%;
+    }
+
+    .back-bar-responsive .categories{
+        margin-top: 30px;
+    }
+
+    .open .back-bar-responsive .categories .listing-categories{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .back-bar-responsive .categories .listing-categories li{
+        margin-top: 30px;
+    }
+}
+
+/*--------------------------------------------------*/
+.homepage-odyssee-last-forum img{
+    width: 6%;
+}
+
+.homepage-odyssee-principal {
+    width: 100%;
+}
+
+.homepage-odyssee-principal {
+    display: flex;
+    flex-direction: column;
+    height: 180vh;
+    width: 68%;
+    background-color: #293347;
+}
+
+.homepage-odyssee-secondary {
+    width: 100%;
+}
+
+.homepage-odyssee-img img {
+    width: 65%;
+}
+
+.homepage-odyssee-secondary {
+    display: flex;
+}
+
+.homepage-odyssee-info1-last-forum{
+    background-color: #061531;
+    padding: 2vh 2vh 2vh 2vh;
+    border: 1px solid gray;
+}
+
+.homepage-odyssee-last-forum {
+    background-color: #0f2245;
+    padding: 2vh 2vh 2vh 2vh;
+    border: 1px solid gray;
+}
+
+.homepage-odyssee-info1-last-forum a img{
+    width: 6%;
+}
+
+.homepage-odyssee-info2-last-forum{
+    background-color: #061531;
+    padding: 2vh 2vh 2vh 2vh;
+    border: 1px solid gray;
+}
+
+.homepage-odyssee-info2-last-forum a img{
+    width: 6%;
+}
+
+.homepage-odyssee-info3-last-forum{
+    background-color: #061531;
+    padding: 2vh 2vh 2vh 2vh;
+    border: 1px solid gray;
+}
+
+.homepage-odyssee-info3-last-forum a img{
+    width: 6%;
+}
+
+.homepage-odyssee-info4-last-forum{
+    background-color: #061531;
+    padding: 2vh 2vh 2vh 2vh;
+    border: 1px solid gray;
+}
+
+.homepage-odyssee-info4-last-forum a img{
+    width: 6%;
+}
+
+.homepage-odyssee-array-last-forum {
+    width: 30%;
+    padding-top: 2vh;
+    padding-right: 3vh;
+}
+
+.homepage-odyssee-img-slogan {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4vh;
+}
+
+.homepage-odyssee-slogan {
+    padding-top: 2vh;
+}
+
+.homepage-odyssee-slogan p {
+    font-size: 25px;
+}
+
+.homepage-odyssee-principal-art-mythologie {
+    display: flex;
+    justify-content: center;
+    padding-top: 8vh;
+    padding-left: 5vh;
+}
+
+.homepage-odyssee-principal-art img{
+    width: 90%;
+    border: 3px solid orange;
+}
+
+.homepage-odyssee-principal-mythologie img{
+    width: 90%;
+    border: 3px solid orange;
+}
+
+.homepage-odyssee-principal-must-haves {
+    text-align: center;
+    padding-top: 9vh;
+}
+
+.title-must-haves {
+    font-size: 35px;
+}
+
+.homepage-odyssee-principal-top-art-mythologie {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10vh;
+    width: 100%;
+    padding-left: 23vh;
+}
+
+.homepage-odyssee-principal-top-art-img img {
+    width: 60%;
+}
+
+.homepage-odyssee-principal-top-mythologie-img img {
+    width: 60%;
+}
+
+.homepage-odyssee-principal-array-art-mythologie {
+    display: flex;
+    justify-content: space-around;
+}
+
+.homepage-odyssee-principal-array-art {
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-odyssee-info1-last-forum{
+    background-color: #061531;
+    padding: 2vh 2vh 2vh 2vh;
+    border: 1px solid gray;
+}
+
+
+.number1-art {
+    background-color: #30DDE2;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number2-art {
+    background-color: #34C0C4;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number3-art {
+    background-color: #23A5A9;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number4-art {
+    background-color: #1E8588;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number5-art {
+    background-color: #0F4E50;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.art-number1 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.art-number2 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.art-number3 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.art-number4 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.art-number5 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.mythologie-number1 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.mythologie-number2 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.mythologie-number3 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.mythologie-number4 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.mythologie-number5 {
+    background-color: white;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number1-mythologie {
+    background-color: #E39164;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number2-mythologie {
+    background-color: #E98249;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number3-mythologie {
+    background-color: #F17734;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number4-mythologie {
+    background-color: #DF621E;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.number5-mythologie {
+    background-color: #D94D00;
+    padding: 1vh 1vh 1vh 1vh;
+}
+
+.homepage-odyssee-principal-crew-title {
+    text-align: center;
+    padding-top: 11vh;
+}
+
+.crew-title {
+    font-size: 35px;
+}
+
+.homepage-odyssee-principal-crew {
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-odyssee-principal-crew img {
+    width: 80%;
+}
+
+.homepage-odyssee-principal-crew-staff-contact {
+    padding-top: 4vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bouton-contact1 {
+    background-color: #0f2245;
+    padding: 2vh 3vh 2vh 3vh;
+    border: 1px solid gray;
+}
+
+.bouton-contact2 {
+    background-color: #0f2245;
+    padding: 2vh 3vh 2vh 3vh;
+    border: 1px solid gray;
+}
+
+.bouton-contact3 {
+    background-color: #0f2245;
+    padding: 2vh 3vh 2vh 3vh;
+    border: 1px solid gray;
+}
